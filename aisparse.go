@@ -28,7 +28,7 @@ func main() {
 		8: "under way sailing",
 	}
 
-	fmt.Printf("Vessel with MMSI %d with position %f N, %f E(?) is %s going %d knots.\n", p.MMSI, float32(p.Latitude)/600000, float32(p.Longitude)/600000, Statuses[p.Status], p.Speed)
+	fmt.Printf("Vessel with MMSI %d with position %f N, %f E(?) is %s going %f knots.\n", p.MMSI, float32(p.Latitude)/600000, float32(p.Longitude)/600000, Statuses[p.Status], float32(p.Speed)/10)
 }
 
 
