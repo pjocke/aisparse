@@ -14,11 +14,11 @@ type Position struct{
 
 func main() {
 	p := Position{
-		MMSI: parsePayload("13u?etPv2;0n:dDPwUM1U1Cb069D", 8, 37),
-		Status: parsePayload("13u?etPv2;0n:dDPwUM1U1Cb069D", 38, 41),
-		Speed: parsePayload("13u?etPv2;0n:dDPwUM1U1Cb069D", 50, 59),
-		Longitude: parsePayload("13u?etPv2;0n:dDPwUM1U1Cb069D", 61, 88),
-		Latitude: parsePayload("13u?etPv2;0n:dDPwUM1U1Cb069D", 89, 115),
+		MMSI: ParsePayload("13u?etPv2;0n:dDPwUM1U1Cb069D", 8, 37),
+		Status: ParsePayload("13u?etPv2;0n:dDPwUM1U1Cb069D", 38, 41),
+		Speed: ParsePayload("13u?etPv2;0n:dDPwUM1U1Cb069D", 50, 59),
+		Longitude: ParsePayload("13u?etPv2;0n:dDPwUM1U1Cb069D", 61, 88),
+		Latitude: ParsePayload("13u?etPv2;0n:dDPwUM1U1Cb069D", 89, 115),
 	}
 
 	Statuses := map[uint32]string{
@@ -32,7 +32,7 @@ func main() {
 }
 
 
-func parsePayload(s string, first, last int) uint32 {
+func ParsePayload(s string, first, last int) uint32 {
 	payload := []byte(s)
 
 	start := first / 6
